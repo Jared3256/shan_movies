@@ -20,10 +20,11 @@ export const fetchMovies = async ({ query }: { query: string }) => {
       headers: TMDB_CONFIG.headers,
     })
     .then((response) => {
-      console.log(response.data);
       data_response = response.data;
     })
     .catch((error) => {
       console.log(error);
     });
+
+  return data_response;
 };
