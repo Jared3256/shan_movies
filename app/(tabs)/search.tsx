@@ -17,8 +17,10 @@ export default function Search() {
     error: moviesError,
     refetch: loadMovies,
     reset,
-  } = useFetch(() => fetchMovies({ query: searchQuery }, false));
+  } = useFetch(() => fetchMovies({ query: searchQuery }), false);
   let movies_res = movies?.results;
+
+  console.log(movies_res);
 
   useEffect(() => {
     const timeoutFunc = setTimeout(async () => {
@@ -43,8 +45,8 @@ export default function Search() {
         className="px-5"
         numColumns={3}
         data={movies_res}
-        keyExtractor={(items) => items.id.toString()}
-        renderItem={(item) => <MovieCard {...item} />}
+        keyExtractor={(items) => items.id}
+        renderItem={({ item }) => <MovieCard {...item} />}
         columnWrapperStyle={{
           justifyContent: "center",
           gap: 16,

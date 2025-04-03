@@ -1,4 +1,4 @@
-import { View,  Image, TextInput } from "react-native";
+import { View, Image, TextInput } from "react-native";
 import React from "react";
 import { icons } from "@/constants/icons";
 
@@ -27,7 +27,7 @@ export default function SearchBar({
         placeholder={placeholder || "Search here"}
         onPress={onPress}
         value={value}
-        onChangeText={() => onChangeText}
+        onChangeText={onChangeText}
         placeholderTextColor={"#a8b5db"}
         className="flex-1 ml-2 text-white"
       />
